@@ -24,6 +24,16 @@ st.markdown(background_image, unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; color: black ; font-size: 25px ;'>Calculate Physiological Age</h1>", unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; color: black ; font-size: 12px ;'>By Levine PhenoAge Biological Age</h1>", unsafe_allow_html=True)
 
+
+chrome_options = Options()
+
+chrome_options.add_argument("--headless=new")
+
+driver=webdriver.Chrome(options=chrome_options)
+
+
+
+
 col1, col2 = st.columns([1,1]) 
 with col1:
      st.write("ALbumin(g/dL)")
@@ -89,11 +99,7 @@ with col102:
 if st.button("Calculate"):
 
     
-    chrome_options = Options()
-
-    chrome_options.add_argument("--headless=new")
-
-    driver=webdriver.Chrome(options=chrome_options)
+    
     
     driver.get(f"https://www.longevity-tools.com/levine-pheno-age#S-albumin={Alb}&S-creatinine={Cr}&S-glucose={Glu}&S-hsCRP={CRP}&LYM={LYM}&MCV={MCV}&S-ALP={ALP}&WBC={WBC}&age={Age}&RDW={RDW}")
     
