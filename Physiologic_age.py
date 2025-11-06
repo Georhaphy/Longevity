@@ -101,7 +101,7 @@ if st.button("Calculate"):
 
     chrome_options.add_argument("--headless=new")
     
-    options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--no-sandbox')
 
     driver=webdriver.Chrome(options=chrome_options)
     
