@@ -27,9 +27,24 @@ st.markdown(background_image, unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; color: black ; font-size: 25px ;'>Calculate Physiological Age</h1>", unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; color: black ; font-size: 12px ;'>By Levine PhenoAge Biological Age</h1>", unsafe_allow_html=True)
 
+@st.cache_resource
+    def get_driver():
+        return webdriver.Chrome(
+            service=Service(
+                ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()
+            ),
+            options=chrome_options,
+        )
 
+chrome_options = Options()
 
+chrome_options.add_argument("--headless=new")
+    
+chrome_options.add_argument('--no-sandbox')
 
+chrome_options.add_argument('--disable-dev-shm-usage')
+
+driver=webdriver.Chrome(options=chrome_options)
 
 
 
