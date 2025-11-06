@@ -1,6 +1,5 @@
 
 selenium==4.38.0
 streamlit==1.40.1
-seleniumbase
 webdriver-manager
 psutil
