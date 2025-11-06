@@ -10,6 +10,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
+
 background_image = """
 <style>
 [data-testid="stAppViewContainer"] > .main {
@@ -99,6 +100,8 @@ if st.button("Calculate"):
     chrome_options = Options()
 
     chrome_options.add_argument("--headless=new")
+    
+    options.add_argument('--no-sandbox')
 
     driver=webdriver.Chrome(options=chrome_options)
     
