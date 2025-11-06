@@ -28,7 +28,7 @@ st.markdown("<h1 style='text-align: center; color: black ; font-size: 25px ;'>Ca
 st.markdown("<h1 style='text-align: center; color: black ; font-size: 12px ;'>By Levine PhenoAge Biological Age</h1>", unsafe_allow_html=True)
 
 @st.cache_resource
-    def get_driver():
+def get_driver():
         return webdriver.Chrome(
             service=Service(
                 ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()
