@@ -103,6 +103,8 @@ if st.button("Calculate"):
     
     chrome_options.add_argument('--no-sandbox')
 
+    chrome_options.add_argument('--disable-dev-shm-usage')
+
     driver=webdriver.Chrome(options=chrome_options)
     
     driver.get(f"https://www.longevity-tools.com/levine-pheno-age#S-albumin={Alb}&S-creatinine={Cr}&S-glucose={Glu}&S-hsCRP={CRP}&LYM={LYM}&MCV={MCV}&S-ALP={ALP}&WBC={WBC}&age={Age}&RDW={RDW}")
